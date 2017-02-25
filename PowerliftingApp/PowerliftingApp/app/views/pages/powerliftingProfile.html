@@ -1,0 +1,102 @@
+﻿<div class="page-header">
+    <h1>Lifter Profile <small><i class="ace-icon fa fa-angle-double-right"></i> overview &amp; stats {{message}}</small></h1>
+</div>
+
+<div id="user-profile-1" class="user-profile row">
+
+    <div class="col-xs-12 col-sm-3 center">
+        <div>
+            <!-- #section:pages/profile.picture -->
+            <span class="profile-picture">
+                <img id="avatar"
+                     ng-model="avatar.value" class="img-responsive" alt="Alex's Avatar" ng-src="/images/raywilliams.jpg" />
+            </span>
+            <!-- /section:pages/profile.picture -->
+
+        </div>
+        <div class="space-4"></div>
+
+        <div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right" uib-dropdown>
+            <a href="" uib-dropdown-toggle class="user-title-label dropdown-toggle">
+                <i class="ace-icon fa fa-circle light-green"></i>
+                &nbsp;<span class="white">Ray Williams</span>
+            </a>
+            <ul uib-dropdown-menu class="align-left dropdown-menu dropdown-caret dropdown-lighter">
+                <li class="dropdown-header">
+                    Change Status
+                </li>
+                <li>
+                    <a href="">
+                        <i class="ace-icon fa fa-circle green"></i>&nbsp;
+                        <span class="green">Available</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="ace-icon fa fa-circle red"></i>&nbsp;
+                        <span class="red">Busy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="ace-icon fa fa-circle grey"></i>&nbsp;
+                        <span class="grey">Invisible</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="space-4"></div>
+
+        <div class="profile-contact-info">
+            <div class="profile-contact-links align-left">
+                <a href="" class="btn btn-link">
+                    <i class="ace-icon fa fa-plus-circle bigger-120 green"></i>
+                    Add as a friend
+                </a>
+
+                <a href="" class="btn btn-link">
+                    <i class="ace-icon fa fa-envelope bigger-120 pink"></i>
+                    Send a message
+                </a>
+
+                <a href="" class="btn btn-link">
+                    <i class="ace-icon fa fa-globe bigger-125 blue"></i>
+                    www.alexdoe.com
+                </a>
+            </div>
+
+            <div class="space-6"></div>
+
+            <div class="profile-social-links align-center">
+                <a href="" class="tooltip-info" title="" data-original-title="Visit my Facebook">
+                    <i class="middle ace-icon fa fa-facebook-square fa-2x blue"></i>
+                </a>
+                <a href="" class="tooltip-info" title="" data-original-title="Visit my Twitter">
+                    <i class="middle ace-icon fa fa-twitter-square fa-2x light-blue"></i>
+                </a>
+                <a href="" class="tooltip-error" title="" data-original-title="Visit my Pinterest">
+                    <i class="middle ace-icon fa fa-pinterest-square fa-2x red"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-9">
+        <div class="col-sm-7">
+            <div widget-box class="widget-box transparent">
+                <div class="widget-header widget-header-flat">
+                    <h4 class="widget-title lighter"><i class="ace-icon fa fa-signal"></i> Sale Stats</h4>
+                    <div class="widget-toolbar">
+                        <a href="" data-action="collapse"><i class="ace-icon fa fa-chevron-up"></i></a>
+                    </div>
+                </div>
+
+                <div class="widget-body">
+                    <div class="widget-main padding-4">
+                        <flot id="sales-charts" dataset="saleschart.data" options="saleschart.options" width="100%" height="220px"></flot>
+                    </div><!-- /.widget-main -->
+                </div><!-- /.widget-body -->
+            </div><!-- /.widget-box -->
+        </div><!-- /.col -->
+    </div>
+</div>
