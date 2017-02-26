@@ -1,0 +1,54 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Enter Lifter Information</h3>
+</div>
+<div class="modal-body">
+    <form class="form"
+          name="newLifterForm"
+          novalidate>
+        <div class="form-group">
+            <label for="name">
+                Name
+            </label>
+            <textarea ng-model="lifter.name"
+                      id="name"
+                      name="name"
+                      class="form-control"
+                      placeholder="Default Text"
+                      required>
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label for="weightClass">Weight Class</label>
+            <select ng-model="lifter.weightClass"
+                    class="form-control"
+                    id="weightClass"
+                    name="weightClass"
+                    required>
+                <option>114</option>
+                <option>132</option>
+                <option>148</option>
+                <option>181</option>
+                <option>198</option>
+                <option>220</option>
+                <option>242</option>
+                <option>275</option>
+                <option>308</option>
+                <option>SHW</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="firstAttempt">1st Attempt</label>
+            <input ng-model="lifter.firstAttempt"
+                   id="firstAttempt"
+                   name="firstAttempt"
+                   type="number"
+                   min="0"
+                   step="1"
+                   required />
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary btn-sm" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-default btn-sm" type="button" ng-click="cancel()">Cancel</button>
+</div>

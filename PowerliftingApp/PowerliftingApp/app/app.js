@@ -72,8 +72,8 @@ var app = angular
             url: '/flights-prioritization',
             title: 'Prioritize Flights',
 
-            templateUrl: 'app/views/pages/flightPrioritization.html',
-            controller: 'FlightPrioritizationCtrl',
+            templateUrl: 'app/views/pages/flightManager.html',
+            controller: 'FlightManagerCtrl',
             resolve: {
                 lazyLoad: [
                     '$ocLazyLoad', function ($ocLazyLoad) {
@@ -83,7 +83,11 @@ var app = angular
                         },
                             {
                                 name: 'AceApp',
-                                files: ['app/controllers/pages/flightPrioritization.js']
+                                files: ['app/controllers/pages/flightManager.js']
+                            },
+                            {
+                              name: 'AceApp',
+                              files: ['app/resources/flightManagerResource.js']
                             }
                         ]);
                     }

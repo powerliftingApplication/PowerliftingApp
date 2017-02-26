@@ -94,10 +94,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\controllers\pages\flightPrioritization.js" />
+    <Content Include="app\controllers\pages\flightManager.js" />
     <Content Include="app\controllers\pages\powerliftingProfile.js" />
-    <Content Include="app\views\pages\flightPrioritization.html" />
+    <Content Include="app\resources\flightManagerResource.js" />
+    <Content Include="app\views\pages\flightNodesRenderer.html" />
+    <Content Include="app\views\pages\flightManager.html" />
+    <Content Include="app\views\pages\newLifterModal.html" />
     <Content Include="app\views\pages\powerliftingProfile.html" />
+    <Content Include="app\views\pages\subLifterNodesRenderer.html" />
     <Content Include="components\angular-flot\angular-flot.js" />
     <Content Include="components\angular-flot\angular-flot.min.js" />
     <Content Include="components\angular-flot\example\app.js" />

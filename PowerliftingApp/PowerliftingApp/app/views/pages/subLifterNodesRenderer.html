@@ -1,0 +1,30 @@
+﻿<div ui-tree-handle class="tree-node tree-node-content">
+    <a class="btn btn-success btn-xs" ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)">
+        <span class="glyphicon"
+              ng-class="{
+          'glyphicon-chevron-right': collapsed,
+          'glyphicon-chevron-down': !collapsed
+        }"></span>
+    </a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <div style="display: block;">Name</div>
+                <div>{{node.firstName}}</div>
+            </div>
+            <div class="col-sm-3">
+                <div style="display: block;">Weight Class</div>
+                <div>{{node.weightClass}}</div>
+            </div>
+            <div class="col-sm-3">
+                <div style="display: block;">1st Attempt</div>
+                <div>{{node.firstAttempt}}</div>
+            </div>
+            <div>
+                <a class="pull-right btn btn-danger btn-xs" data-nodrag ng-click="remove(this)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
