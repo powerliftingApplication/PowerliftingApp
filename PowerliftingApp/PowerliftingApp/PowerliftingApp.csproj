@@ -94,12 +94,17 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\controllers\pages\flightPrioritization.js" />
     <Content Include="app\controllers\pages\powerliftingProfile.js" />
+    <Content Include="app\views\pages\flightPrioritization.html" />
     <Content Include="app\views\pages\powerliftingProfile.html" />
     <Content Include="components\angular-flot\angular-flot.js" />
     <Content Include="components\angular-flot\angular-flot.min.js" />
     <Content Include="components\angular-flot\example\app.js" />
     <Content Include="components\angular-flot\logo.svg" />
+    <Content Include="components\angular-ui-tree\angular-ui-tree-node.css" />
+    <Content Include="components\angular-ui-tree\angular-ui-tree.css" />
+    <Content Include="components\angular-ui-tree\angular-ui-tree.js" />
     <Content Include="components\Flot\examples\axes-time-zones\date.js" />
     <Content Include="components\Flot\examples\background.png" />
     <Content Include="components\Flot\examples\examples.css" />
