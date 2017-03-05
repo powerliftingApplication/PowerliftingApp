@@ -36,11 +36,10 @@
             <div class="main-content-inner">
                 <div class="breadcrumbs" ng-class="{'breadcrumbs-fixed': ace.settings.breadcrumbs}" ng-include="'app/views/layouts/breadcrumbs.html'"></div>
                 <div class="page-content">
-                    <ui-view ng-show="!viewContentLoading"></ui-view>
+                    <div ui-view ng-show="!viewContentLoading"></div>
                 </div>
             </div>
         </div>
-
 
         <div class="footer" ng-include="'app/views/layouts/footer.html'"></div>
 
@@ -68,7 +67,7 @@
     <script src="components/angular/angular.js"></script>
     <script src="components/angular-animate/angular-animate.js"></script>
     <script src="components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="components/angular-touch/angular-touch.js"></script>
+    <script src="components/angular-touch/angular-touch.js"></script> <!--remove? For touch phones-->
     <script src="components/angular-resource/angular-resource.js"></script>
     <script src="components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="components/angular-bootstrap/ui-bootstrap-tpls.js"></script>

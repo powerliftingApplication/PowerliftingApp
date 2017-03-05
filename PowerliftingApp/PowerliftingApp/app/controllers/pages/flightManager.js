@@ -21,7 +21,7 @@
             $scope.getFlights();
         }
 
-        $scope.init(); 
+        $scope.init();
 
         $scope.remove = function (scope) {
             scope.remove();
@@ -46,14 +46,31 @@
                 templateUrl: 'app/views/pages/newLifterModal.html',
                 scope: $scope,
                 controller: function ($scope, $uibModalInstance) {
+                    $scope.formSubmitted = false;//indicates whether user has tried submitting for or not
+                    $scope.updateFormScope = function () {
+                        $scope.formScope = this;//get a reference to form object
+                    };
+                    //check if a specific field has error
+                    $scope.hasError = function (field) {
+                        var myForm = $scope.formScope.form;
+                        var hasError = (myForm[field].$dirty || $scope.formSubmitted) && myForm[field].$invalid;
+                        return hasError;
+                    };
+
+                    //check if form has an invalid field
+                    $scope.isValidForm = function () {
+                        $scope.formSubmitted = true;
+                        return !($scope.formScope.form.$invalid);
+                    };
                     $scope.ok = function () {
-                        $uibModalInstance.close($scope.lifter);
+                        if ($scope.isValidForm()) {
+                            $uibModalInstance.close($scope.lifter);
+                        }
                     };
                     $scope.cancel = function () {
                         $uibModalInstance.dismiss('cancel');
                     };
                 }
-                //size: 'lg',
             });
 
             modalInstance.result.then(function (lifter) {
@@ -61,15 +78,14 @@
             });
         }
 
-        $scope.pushNewSubItem = function(lifter, parentNode)
-        {
+        $scope.pushNewSubItem = function (lifter, parentNode) {
             var nodeData = parentNode.$modelValue;
             nodeData.lifters.push({
                 id: nodeData.id * 10 + nodeData.lifters.length,
-                firstName: lifter.name,
+                firstName: lifter.firstName,
                 firstAttempt: lifter.firstAttempt,
                 weightClass: lifter.weightClass
-        });
+            });
         };
 
         $scope.collapseAll = function () {

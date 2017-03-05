@@ -2,49 +2,98 @@
     <h3 class="modal-title">Enter Lifter Information</h3>
 </div>
 <div class="modal-body">
-    <form class="form"
-          name="newLifterForm"
+    <form class="form-horizontal"
+          name="form"
+          ng-init="updateFormScope()"
           novalidate>
-        <div class="form-group">
-            <label for="name">
-                Name
-            </label>
-            <textarea ng-model="lifter.name"
-                      id="name"
-                      name="name"
-                      class="form-control"
-                      placeholder="Default Text"
-                      required>
-            </textarea>
+        <div class="form-group" ng-class="{'has-error': hasError('firstName')}">
+            <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="firstName">First Name:</label>
+            <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                    <input type="text" name="firstName" ng-model="lifter.firstName" required class="col-xs-12 col-sm-5" />
+                </div>
+                <div class="help-block" ng-show="hasError('firstName')" ng-messages="myForm.firstName.$error">
+                    <div ng-message="required">This field is required</div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="weightClass">Weight Class</label>
-            <select ng-model="lifter.weightClass"
-                    class="form-control"
-                    id="weightClass"
-                    name="weightClass"
-                    required>
-                <option>114</option>
-                <option>132</option>
-                <option>148</option>
-                <option>181</option>
-                <option>198</option>
-                <option>220</option>
-                <option>242</option>
-                <option>275</option>
-                <option>308</option>
-                <option>SHW</option>
-            </select>
+        
+        <div class="space-2"></div>
+
+        <div class="form-group" ng-class="{'has-error': hasError('lastName')}">
+            <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="lastName">Last Name:</label>
+            <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                    <input type="text" name="lastName" ng-model="lifter.lastName" required class="col-xs-12 col-sm-5" />
+                </div>
+                <div class="help-block" ng-show="hasError('lastName')" ng-messages="myForm.lastName.$error">
+                    <div ng-message="required">This field is required</div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="firstAttempt">1st Attempt</label>
-            <input ng-model="lifter.firstAttempt"
-                   id="firstAttempt"
-                   name="firstAttempt"
-                   type="number"
-                   min="0"
-                   step="1"
-                   required />
+        
+        <div class="space-2"></div>
+
+        <div class="form-group" ng-class="{'has-error': hasError('firstAttempt')}">
+            <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="firstAttempt">First Attempt:</label>
+            <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                    <input type="number" min="0" step="1" name="firstAttempt" ng-model="lifter.firstAttempt" required class="col-xs-12 col-sm-5" />
+                </div>
+                <div class="help-block" ng-show="hasError('firstAttempt')" ng-messages="myForm.firstAttempt.$error">
+                    <div ng-message="required">This field is required</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="space-2"></div>
+
+        <div class="form-group" ng-class="{'has-error': hasError('gender')}">
+            <label class="control-label col-xs-12 col-sm-3 no-padding-right">Gender</label>
+            <div class="col-xs-12 col-sm-9">
+                <div>
+                    <label class="line-height-1 blue">
+                        <input name="gender" value="1" type="radio" class="ace" ng-model="lifter.gender" required />
+                        <span class="lbl"> Male</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="line-height-1 blue">
+                        <input name="gender" value="2" type="radio" class="ace" ng-model="lifter.gender" required />
+                        <span class="lbl"> Female</span>
+                    </label>
+                </div>
+
+                <div class="help-block" ng-show="hasError('gender')" ng-messages="myForm.gender.$error">
+                    <div ng-message="required">Please choose gender!</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="space-2"></div>
+
+        <div class="form-group" ng-class="{'has-error': hasError('weightClass')}">
+            <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="weightClass">Weight Class</label>
+            <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                    <select class="input-medium" name="weightClass" ng-model="lifter.weightClass" required>
+                        <option value="">------------------</option>
+                        <option>114</option>
+                        <option>132</option>
+                        <option>148</option>
+                        <option>181</option>
+                        <option>198</option>
+                        <option>220</option>
+                        <option>242</option>
+                        <option>275</option>
+                        <option>308</option>
+                        <option>SHW</option>
+                    </select>
+                </div>
+                <div class="help-block" ng-show="hasError('weightClass')" ng-messages="myForm.weightClass.$error">
+                    <div ng-message="required">Please choose weight class!</div>
+                </div>
+            </div>
         </div>
     </form>
 </div>
