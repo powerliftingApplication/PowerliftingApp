@@ -1,4 +1,4 @@
-﻿angular.module('AceApp').controller('NewLifterModalCtrl',
+﻿angular.module('AceApp').controller('FormModalCtrl',
     function ($scope, $uibModalInstance) {
         $scope.formSubmitted = false;//indicates whether user has tried submitting for or not
         $scope.updateFormScope = function () {
@@ -18,7 +18,7 @@
         };
         $scope.ok = function () {
             if ($scope.isValidForm()) {
-                $uibModalInstance.close($scope.lifter);
+                $uibModalInstance.close($scope.formObject);
             }
         };
         $scope.cancel = function () {

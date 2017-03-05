@@ -2,9 +2,11 @@
     <h1>Flight Manager <small><i class="ace-icon fa fa-angle-double-right"></i> overview &amp; stats</small></h1>
 </div>
 <div class="row">
-    <div class="col-sm-12">
-        <div ng-click="expandAll()" class="btn btn-sm btn-primary">Expand all</div>
-        <div ng-click="collapseAll()" class="btn btn-sm btn-primary">Collapse all</div>
+    <div class="col-sm-8"> <!-- maybe use widget and widget headers here for formatting -->
+        <div ng-click="addNewFlight()" class="btn btn-sm btn-primary pull-left">Add New Flight</div>
+        <div ng-click="expandAll()" class="btn btn-sm btn-primary pull-right">Expand all</div>
+        <div style="padding-left: 50px;"></div>
+        <div ng-click="collapseAll()" class="btn btn-sm btn-primary pull-right">Collapse all</div>
     </div>
 </div>
 <div class="row">
@@ -23,5 +25,7 @@
     </div>-->
 </div>
 <div class="row">
-    <div ng-click="getFlights()" class="btn btn-sm btn-success">Save Changes</div>
+    <div class="col-sm-8">
+        <div ng-click="getFlights()" class="btn btn-sm btn-success pull-left">Save Changes</div>
+    </div>
 </div>

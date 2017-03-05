@@ -1,5 +1,5 @@
 ﻿angular.module('AceApp').controller('FlightManagerCtrl',
-    function ($scope, $uibModal, flightManagerResource, $http, $timeout, $rootScope) {
+    function ($scope, $uibModal, flightManagerResource) {
         $scope.data = [];
 
         $scope.getFlights = function () {
@@ -36,27 +36,53 @@
             $scope.data.splice(0, 0, a);
         };
 
-        $scope.newSubItem = function (parentNode) {
-            $scope.openModal(parentNode);
+        $scope.addNewFlight = function() {
+            // wrapper method in case there needs to be checks before opening modal. 
+            $scope.openNewFlightModal();
         };
 
-        $scope.openModal = function (parentNode) {
+        $scope.openNewFlightModal = function() {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'app/views/pages/newFlightModal.html',
+                scope: $scope,
+                controller: 'FormModalCtrl'
+            });
+
+            modalInstance.result.then(function(formObject) {
+                $scope.pushNewFlight(formObject);
+            });
+        };
+
+        $scope.pushNewFlight = function(flight) {
+            $scope.data.push({
+                flightName: flight.flightName,
+                flightType: flight.flightType,
+                lifters: []
+            });
+        };
+
+        $scope.addNewLifter = function (parentNode) {
+            // wrapper method in case there needs to be checks before opening modal. 
+            $scope.openNewLifterModal(parentNode);
+        };
+
+        $scope.openNewLifterModal = function (parentNode) {
             var modalInstance = $uibModal.open({
                 animation: true,
                 templateUrl: 'app/views/pages/newLifterModal.html',
                 scope: $scope,
-                controller: 'NewLifterModalCtrl'
+                controller: 'FormModalCtrl'
             });
 
-            modalInstance.result.then(function (lifter) {
-                $scope.pushNewSubItem(lifter, parentNode);
+            modalInstance.result.then(function (formObject) {
+                $scope.pushNewLifter(formObject, parentNode);
             });
         }
 
-        $scope.pushNewSubItem = function (lifter, parentNode) {
+        $scope.pushNewLifter = function (lifter, parentNode) {
             var nodeData = parentNode.$modelValue;
             nodeData.lifters.push({
-                id: nodeData.id * 10 + nodeData.lifters.length,
                 firstName: lifter.firstName,
                 firstAttempt: lifter.firstAttempt,
                 weightClass: lifter.weightClass

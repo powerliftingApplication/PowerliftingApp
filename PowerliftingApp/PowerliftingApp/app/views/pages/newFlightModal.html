@@ -1,0 +1,54 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Enter Flight Information</h3>
+</div>
+<div class="modal-body">
+    <form class="form-horizontal"
+          name="form"
+          ng-init="updateFormScope()"
+          novalidate>
+        <div class="form-group" ng-class="{'has-error': hasError('flightName')}">
+            <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="flightName">Flight Name:</label>
+            <div class="col-xs-12 col-sm-9">
+                <div class="clearfix">
+                    <input type="text" name="flightName" ng-model="formObject.flightName" required class="col-xs-12 col-sm-5" />
+                </div>
+                <div class="help-block" ng-show="hasError('flightName')" ng-messages="myForm.flightName.$error">
+                    <div ng-message="required">This field is required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="space-2"></div>
+
+        <div class="form-group" ng-class="{'has-error': hasError('flightType')}">
+            <label class="control-label col-xs-12 col-sm-3 no-padding-right">Type</label>
+            <div class="col-xs-12 col-sm-9">
+                <div>
+                    <label class="line-height-1 blue">
+                        <input name="flightType" value="1" type="radio" class="ace" ng-model="formObject.flightType" required />
+                        <span class="lbl"> Squat</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="line-height-1 blue">
+                        <input name="flightType" value="2" type="radio" class="ace" ng-model="formObject.flightType" required />
+                        <span class="lbl"> Bench</span>
+                    </label>
+                </div>
+                <div>
+                    <label class="line-height-1 blue">
+                        <input name="flightType" value="2" type="radio" class="ace" ng-model="formObject.flightType" required />
+                        <span class="lbl"> Deadlift</span>
+                    </label>
+                </div>
+                <div class="help-block" ng-show="hasError('flightType')" ng-messages="myForm.flightType.$error">
+                    <div ng-message="required">Please choose type!</div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary btn-sm" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-default btn-sm" type="button" ng-click="cancel()">Cancel</button>
+</div>

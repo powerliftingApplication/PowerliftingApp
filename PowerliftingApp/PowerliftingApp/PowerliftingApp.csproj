@@ -95,11 +95,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\controllers\pages\flightManager.js" />
-    <Content Include="app\controllers\pages\newLifterModal.js" />
+    <Content Include="app\controllers\pages\formModal.js" />
     <Content Include="app\controllers\pages\powerliftingProfile.js" />
     <Content Include="app\resources\flightManagerResource.js" />
     <Content Include="app\views\pages\flightNodesRenderer.html" />
     <Content Include="app\views\pages\flightManager.html" />
+    <Content Include="app\views\pages\newFlightModal.html" />
     <Content Include="app\views\pages\newLifterModal.html" />
     <Content Include="app\views\pages\powerliftingProfile.html" />
     <Content Include="app\views\pages\subLifterNodesRenderer.html" />

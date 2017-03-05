@@ -10,7 +10,7 @@
             <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="firstName">First Name:</label>
             <div class="col-xs-12 col-sm-9">
                 <div class="clearfix">
-                    <input type="text" name="firstName" ng-model="lifter.firstName" required class="col-xs-12 col-sm-5" />
+                    <input type="text" name="firstName" ng-model="formObject.firstName" required class="col-xs-12 col-sm-5" />
                 </div>
                 <div class="help-block" ng-show="hasError('firstName')" ng-messages="myForm.firstName.$error">
                     <div ng-message="required">This field is required</div>
@@ -24,7 +24,7 @@
             <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="lastName">Last Name:</label>
             <div class="col-xs-12 col-sm-9">
                 <div class="clearfix">
-                    <input type="text" name="lastName" ng-model="lifter.lastName" required class="col-xs-12 col-sm-5" />
+                    <input type="text" name="lastName" ng-model="formObject.lastName" required class="col-xs-12 col-sm-5" />
                 </div>
                 <div class="help-block" ng-show="hasError('lastName')" ng-messages="myForm.lastName.$error">
                     <div ng-message="required">This field is required</div>
@@ -38,7 +38,7 @@
             <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="firstAttempt">First Attempt:</label>
             <div class="col-xs-12 col-sm-9">
                 <div class="clearfix">
-                    <input type="number" min="0" step="1" name="firstAttempt" ng-model="lifter.firstAttempt" required class="col-xs-12 col-sm-5" />
+                    <input type="number" min="0" step="1" name="firstAttempt" ng-model="formObject.firstAttempt" required class="col-xs-12 col-sm-5" />
                 </div>
                 <div class="help-block" ng-show="hasError('firstAttempt')" ng-messages="myForm.firstAttempt.$error">
                     <div ng-message="required">This field is required</div>
@@ -53,13 +53,13 @@
             <div class="col-xs-12 col-sm-9">
                 <div>
                     <label class="line-height-1 blue">
-                        <input name="gender" value="1" type="radio" class="ace" ng-model="lifter.gender" required />
+                        <input name="gender" value="1" type="radio" class="ace" ng-model="formObject.gender" required />
                         <span class="lbl"> Male</span>
                     </label>
                 </div>
                 <div>
                     <label class="line-height-1 blue">
-                        <input name="gender" value="2" type="radio" class="ace" ng-model="lifter.gender" required />
+                        <input name="gender" value="2" type="radio" class="ace" ng-model="formObject.gender" required />
                         <span class="lbl"> Female</span>
                     </label>
                 </div>
@@ -76,7 +76,7 @@
             <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="weightClass">Weight Class</label>
             <div class="col-xs-12 col-sm-9">
                 <div class="clearfix">
-                    <select class="input-medium" name="weightClass" ng-model="lifter.weightClass" required>
+                    <select class="input-medium" name="weightClass" ng-model="formObject.weightClass" required>
                         <option value="">------------------</option>
                         <option>114</option>
                         <option>132</option>

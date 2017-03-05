@@ -62,15 +62,17 @@ var app = angular
               })
         .state('flights',
         {
+            // abstract is used for if any child routes are accessed, this parent route will always need to be initalized first. 
+            //(e.g. specific data shared among routes)
             'abstract': true,
             title: 'Flights',
             template: '<ui-view/>',
             icon: 'fa fa-pencil-square-o'
         })
-        .state('flights.prioritization',
+        .state('flights.manager',
         {
-            url: '/flights-prioritization',
-            title: 'Prioritize Flights',
+            url: '/flight-manager',
+            title: 'Flight Manager',
 
             templateUrl: 'app/views/pages/flightManager.html',
             controller: 'FlightManagerCtrl',
@@ -87,7 +89,7 @@ var app = angular
                             },
                             {
                                 name: 'AceApp',
-                                files: ['app/controllers/pages/newLifterModal.js']
+                                files: ['app/controllers/pages/formModal.js']
                             },
                             {
                               name: 'AceApp',
