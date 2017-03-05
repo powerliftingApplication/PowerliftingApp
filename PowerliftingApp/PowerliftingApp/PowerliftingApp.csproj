@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\controllers\pages\flightManager.js" />
+    <Content Include="app\controllers\pages\newLifterModal.js" />
     <Content Include="app\controllers\pages\powerliftingProfile.js" />
     <Content Include="app\resources\flightManagerResource.js" />
     <Content Include="app\views\pages\flightNodesRenderer.html" />

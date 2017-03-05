@@ -86,6 +86,10 @@ var app = angular
                                 files: ['app/controllers/pages/flightManager.js']
                             },
                             {
+                                name: 'AceApp',
+                                files: ['app/controllers/pages/newLifterModal.js']
+                            },
+                            {
                               name: 'AceApp',
                               files: ['app/resources/flightManagerResource.js']
                             }
