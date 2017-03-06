@@ -30,10 +30,26 @@
 
 
     /* --- Tree --- */
-    .tree-node {
+    .parent-tree-node {
         border: 1px solid #dae2ea;
         background: #f8faff;
         color: #7c9eb2;
+    }
+
+    .tree-node {
+        border: 1px solid #dae2ea;
+        background: white;
+        color: #7c9eb2;
+    }
+
+    .sub-node-title {
+        display: block; 
+        font-size: small; 
+        color: grey;
+    }
+
+    .sub-node-attribute {
+        font-size: medium; 
     }
 
     .nodrop {

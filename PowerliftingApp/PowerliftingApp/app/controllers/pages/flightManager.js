@@ -31,11 +31,6 @@
             scope.toggle();
         };
 
-        $scope.moveLastToTheBeginning = function () {
-            var a = $scope.data.pop();
-            $scope.data.splice(0, 0, a);
-        };
-
         $scope.addNewFlight = function() {
             // wrapper method in case there needs to be checks before opening modal. 
             $scope.openNewFlightModal();
@@ -85,6 +80,7 @@
             nodeData.lifters.push({
                 firstName: lifter.firstName,
                 firstAttempt: lifter.firstAttempt,
+                gender: lifter.gender,
                 weightClass: lifter.weightClass
             });
         };

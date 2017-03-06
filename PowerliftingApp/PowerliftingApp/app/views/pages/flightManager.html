@@ -2,30 +2,34 @@
     <h1>Flight Manager <small><i class="ace-icon fa fa-angle-double-right"></i> overview &amp; stats</small></h1>
 </div>
 <div class="row">
-    <div class="col-sm-8"> <!-- maybe use widget and widget headers here for formatting -->
-        <div ng-click="addNewFlight()" class="btn btn-sm btn-primary pull-left">Add New Flight</div>
-        <div ng-click="expandAll()" class="btn btn-sm btn-primary pull-right">Expand all</div>
-        <div style="padding-left: 50px;"></div>
-        <div ng-click="collapseAll()" class="btn btn-sm btn-primary pull-right">Collapse all</div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-8">
-        <div ui-tree id="tree-root">
-            <ol ui-tree-nodes ng-model="data">
-                <li collapsed="true" ng-repeat="node in data" ui-tree-node ng-include="'app/views/pages/flightNodesRenderer.html'"></li>
-            </ol>
+    <div class="col-xs-12 col-sm-8 widget-container-col">
+        <div widget-box>
+            <div widget-header>
+                UPA Powerlifting Nationals
+                <div class="widget-toolbar">
+                    <a class="orange2" ng-click="expandAll()"><i class="ace-icon fa fa-expand"></i></a>
+                    <a class="orange2" ng-click="collapseAll()"><i class="ace-icon fa fa-compress"></i></a>
+                </div>
+            </div>
+            <div class="widget-body">
+                <div class="widget-main">
+                    <div class="row">
+                        <div ui-tree id="tree-root">
+                            <ol ui-tree-nodes ng-model="data">
+                                <li collapsed="true" ng-repeat="node in data" ui-tree-node ng-include="'app/views/pages/flightNodesRenderer.html'"></li>
+                            </ol>
+                        </div>
+                        <!--<div class="col-sm-6">
+                            <div class="info">
+                                {{info}}
+                            </div>
+                            <pre class="code">{{ data | json }}</pre>
+                        </div>-->
+                    </div>
+                    <div ng-click="addNewFlight()" class="btn btn-sm btn-primary">Add New Flight</div>
+                    <div ng-click="getFlights()" class="btn btn-sm btn-success">Save Changes</div>
+                </div>
+            </div>
         </div>
-    </div>
-    <!--<div class="col-sm-6">
-        <div class="info">
-            {{info}}
-        </div>
-        <pre class="code">{{ data | json }}</pre>
-    </div>-->
-</div>
-<div class="row">
-    <div class="col-sm-8">
-        <div ng-click="getFlights()" class="btn btn-sm btn-success pull-left">Save Changes</div>
     </div>
 </div>
